@@ -54,25 +54,25 @@ void ft_print_char(t_print *tab)
 
 }
 
-int ft_evaluate_param(t_print *print, char *str, int i)
+int ft_evaluate_param(va_list args, char *str, int i)
 {
-    if (str[i] == 'c')
-        ft_print_char(print);
-    if (str[i] == 's')
+    if (str[i] == 'c') // int
+        ft_printchar(va_arg(args, int));
+    if (str[i] == 's') // char *
         //Funcion
-    if (str[i] == 'p')
+    if (str[i] == 'p') // unsigned long long
         //Funcion
-    if (str[i] == 'd')
+    if (str[i] == 'd') // int 
         //Funcion
-    if (str[i] == 'i')
+    if (str[i] == 'i') // int UNIR CON d por que es base 10 tambien. 
         //Funcion
-    if (str[i] == 'u')
+    if (str[i] == 'u') // unsigned int
         //Funcion
-    if (str[i] == 'x')
+    if (str[i] == 'x') // unsigned int mayuscula
         //Funcion
-    if (str[i] == 'X')
+    if (str[i] == 'X') // usigned int minuscula usar libft para mayus i minus y unir las X
         //Funcion
-    if (str[i] == '%')
+    if (str[i] == '%') //  Porcentaje only 
         //Funcion
     return (i);
 }
@@ -95,7 +95,7 @@ int ft_printf(const char *input, ...)
         if (input[i] == '%')
         {
             // Evaluar el porcentaje
-            i = ft_evaluate_param(str, input, i + 1);
+            i = ft_evaluate_param(args, input, i + 1);
         } else {
             write(1, &input[i], 1);
         }
