@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_option_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 12:26:37 by amantara          #+#    #+#             */
-/*   Updated: 2022/02/06 17:48:58 by amantara         ###   ########.fr       */
+/*   Updated: 2022/02/07 22:55:41 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,20 @@ int	get_len_uin(uintptr_t number)
 	return (len);
 }
 
-char	*ft_itoa_uin(uintptr_t number)
+void	ft_itoa_uin(uintptr_t num)
 {
-	int		i;
-	int		len;
-	int		aux;
-	char	*c;
-	char	base16[] = "0123456789ABCDEF";
-
-	i = 0;
-	len = get_len_hexa(number);
-	c = malloc(sizeof(char) * (len + 1));
-	c[len] = '\0';
-	len--;
-	while (len >= 0)
+	if (num >= 16)
 	{
-		aux = (number % 16);
-		c[len] = base16[aux];
-		number = number / 16;
-		len--;
+		ft_itoa_uin(num / 16);
+		ft_itoa_uin(num % 16);
 	}
-	return (c);
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
 }
 
 int	ft_print_p(unsigned long long c)
@@ -62,7 +55,7 @@ int	ft_print_p(unsigned long long c)
 	}
 	else
 	{
-		ft_putstr_fd(ft_itoa_uin(c), 1);
+		ft_itoa_uin(c);
 		len += get_len_uin(c);
 	}
 	return (len);

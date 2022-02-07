@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 12:36:11 by amantara          #+#    #+#             */
-/*   Updated: 2022/02/06 17:54:15 by amantara         ###   ########.fr       */
+/*   Updated: 2022/02/07 22:55:25 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int		ft_option_s(char *str);
 
 int		ft_option_di(int number);
 
-int		ft_print_p(unsigned long long c);
-char	*ft_itoa_uin(uintptr_t number);
+int	    ft_print_p(unsigned long long c);
+void	ft_itoa_uin(uintptr_t num);
 int		get_len_uin(uintptr_t number);
 
 int		ft_option_u(unsigned int number);
