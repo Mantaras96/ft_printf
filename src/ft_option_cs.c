@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 12:26:37 by amantara          #+#    #+#             */
-/*   Updated: 2022/02/08 20:29:50 by amantara         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:34:17 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	ft_option_c(int i)
 
 int	ft_option_s(char *str)
 {
-	if (str == NULL){
+	if (str == NULL)
+	{
 		write(1, "(null)", 6);
-		return(6);
+		return (6);
 	}
 	ft_putstr_fd (str, 1);
 	return (ft_strlen(str));

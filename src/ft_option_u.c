@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 12:26:37 by amantara          #+#    #+#             */
-/*   Updated: 2022/02/06 18:50:32 by amantara         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:30:42 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,25 @@ int	get_len_hexa(unsigned int number)
 	return (len);
 }
 
-char	*ft_itoa_unsigned_hexa(unsigned int number)
+void	ft_put_hex(unsigned int num, const char format)
 {
-	int		i;
-	int		len;
-	int		aux;
-	char	*c;
-	char	base16[] = "0123456789ABCDEF";
-
-	i = 0;
-	len = get_len_hexa(number);
-	c = malloc(sizeof(char) * (len + 1));
-	c[len] = '\0';
-	len--;
-	while (len >= 0)
+	if (num >= 16)
 	{
-		aux = (number % 16);
-		c[len] = base16[aux];
-		number = number / 16;
-		len--;
+		ft_put_hex(num / 16, format);
+		ft_put_hex(num % 16, format);
 	}
-	return (c);
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+		{
+			if (format == 'x')
+				ft_putchar_fd((num - 10 + 'a'), 1);
+			if (format == 'X')
+				ft_putchar_fd((num - 10 + 'A'), 1);
+		}
+	}
 }
 
 int	ft_option_u(unsigned int number)

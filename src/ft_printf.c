@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 12:03:31 by amantara          #+#    #+#             */
-/*   Updated: 2022/02/06 18:07:28 by amantara         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:33:44 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_print_porce(void)
 int	ft_evaluate_param(va_list args, const char *str, int i)
 {
 	int	leng;
+
 	leng = 0;
 	if (str[i] == 'c')
 		leng = ft_option_c(va_arg(args, int));
@@ -68,5 +69,3 @@ int	ft_printf(const char *input, ...)
 	va_end(args);
 	return (leng);
 }
-
-
