@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantara <amantara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 12:36:11 by amantara          #+#    #+#             */
-/*   Updated: 2022/02/18 19:35:43 by amantara         ###   ########.fr       */
+/*   Updated: 2022/05/26 00:35:51 by albertmanta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
