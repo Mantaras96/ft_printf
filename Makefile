@@ -38,6 +38,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			@make -C $(LIBFT)
+			@make bonus -C $(LIBFT)
 			@cp libft/libft.a .
 			@mv libft.a $(NAME)
 			@$(AR) $(NAME) $(OBJ)
