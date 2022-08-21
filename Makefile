@@ -36,7 +36,7 @@ OBJF		=	.cache_exists
 
 all:		$(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) ./include/libft.h ./include/ft_printf.h
 			@make -C $(LIBFT)
 			@make bonus -C $(LIBFT)
 			@cp libft/libft.a .
